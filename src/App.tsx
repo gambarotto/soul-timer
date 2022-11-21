@@ -1,21 +1,46 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useCallback, useEffect } from "react";
+import { View } from "react-native";
+import { ThemeProvider } from "styled-components";
+import {
+  useFonts,
+  Comfortaa_400Regular,
+  Comfortaa_700Bold,
+} from "@expo-google-fonts/comfortaa";
+import { Play_400Regular, Play_700Bold } from "@expo-google-fonts/play";
+import * as SplashScreen from "expo-splash-screen";
 
-const App: React.FC = () => (
-  <View style={styles.container}>
-    <Text>Open up App.js to start working on your app!</Text>
-    <StatusBar style="auto" />
-  </View>
-);
+import theme from "./styles/theme";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const App: React.FC = () => {
+  const [fontsLoaded] = useFonts({
+    Comfortaa_400Regular,
+    Comfortaa_700Bold,
+    Play_400Regular,
+    Play_700Bold,
+  });
+  useEffect(() => {
+    async function prepare(): Promise<void> {
+      await SplashScreen.preventAutoHideAsync();
+    }
+    prepare();
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  return (
+    <ThemeProvider theme={theme}>
+      <StatusBar translucent />
+      <View onLayout={onLayoutRootView} />
+    </ThemeProvider>
+  );
+};
 
 export default App;
