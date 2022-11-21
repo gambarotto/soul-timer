@@ -8,4 +8,10 @@ export default {
     green: "#00CF94",
     white: "#FFFFFF",
   },
+  fonts: {
+    comfortaa: "Comfortaa_400Regular",
+    comfortaa_bold: "Comfortaa_700Bold",
+    play: "Play_400Regular",
+    play_bold: "Play_700Bold",
+  },
 };
