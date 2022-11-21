@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "soultimer",
+    "slug": "soultimer",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
