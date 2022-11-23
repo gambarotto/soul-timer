@@ -24,10 +24,22 @@ const Home: React.FC<Props> = ({ onLayout }) => {
   const theme = useTheme();
   return (
     <Container onLayout={onLayout}>
-      <Logo source={ImageLogo} />
+      <Logo source={ImageLogo} resizeMode="contain" />
       <Phrase>Desafie seus limites</Phrase>
       <ContainerButtons>
-        <Button>
+        <Button
+          style={{
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 50,
+              height: 2,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 3.84,
+
+            elevation: 5,
+          }}
+        >
           <GradientButton
             start={[0.39, 0.94]}
             end={[0.7, 1]}
@@ -39,7 +51,19 @@ const Home: React.FC<Props> = ({ onLayout }) => {
             <TextButton2 color={theme.colors.pink}>Timer</TextButton2>
           </GradientButton>
         </Button>
-        <Button>
+        <Button
+          style={{
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 50,
+              height: 2,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 3.84,
+
+            elevation: 5,
+          }}
+        >
           <GradientButton
             start={[0.39, 0.94]}
             end={[0.7, 1]}

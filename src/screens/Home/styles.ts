@@ -24,7 +24,7 @@ export const Container = styled.View`
 
 export const Logo = styled.Image`
   width: ${widthPixel(150)}px;
-  height: ${heightPixel(101.61)}px;
+  height: ${heightPixel(101)}px;
   margin-top: ${pixelSizeVertical(70)}px;
 `;
 export const Phrase = styled.Text`
@@ -37,10 +37,11 @@ export const Phrase = styled.Text`
 export const ContainerButtons = styled.View`
   width: 100%;
 `;
-export const Button = styled.TouchableOpacity``;
-export const GradientButton = styled(LinearGradient)`
+export const Button = styled.TouchableOpacity`
   width: 100%;
   height: ${heightPixel(140)}px;
+`;
+export const GradientButton = styled(LinearGradient)`
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.blue_dark2};
   margin-top: ${pixelSizeVertical(12)}px;
