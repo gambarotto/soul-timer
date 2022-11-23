@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useCallback, useEffect } from "react";
-import { View } from "react-native";
 import { ThemeProvider } from "styled-components";
 import {
   useFonts,
@@ -11,6 +10,7 @@ import { Play_400Regular, Play_700Bold } from "@expo-google-fonts/play";
 import * as SplashScreen from "expo-splash-screen";
 
 import theme from "./styles/theme";
+import Home from "./screens/Home";
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -38,7 +38,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar translucent />
-      <View onLayout={onLayoutRootView} />
+      <Home onLayout={onLayoutRootView} />
     </ThemeProvider>
   );
 };
