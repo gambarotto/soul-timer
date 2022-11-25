@@ -2,6 +2,7 @@ export default {
   colors: {
     blue_dark: '#16213e',
     blue_dark2: '#2D3751',
+    blue_dark3: '#131D36',
     blue1: '#0F3460',
     violet: '#533483',
     pink: '#E94560',
