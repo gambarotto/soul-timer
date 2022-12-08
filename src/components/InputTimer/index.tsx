@@ -30,7 +30,16 @@ const InputTimer: React.FC<Props> = ({
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
-  const timerMask = [/[0-5]/, /[0-9]/, ':', /[0-5]/, /[0-9]/];
+  const timerMask = [
+    /[0-5]/,
+    /[0-9]/,
+    ':',
+    /[0-5]/,
+    /[0-9]/,
+    ':',
+    /[0-5]/,
+    /[0-9]/,
+  ];
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
@@ -47,7 +56,7 @@ const InputTimer: React.FC<Props> = ({
         <InputMask
           value={value}
           mask={typeInput === 'timer' && timerMask}
-          placeholder={typeInput === 'timer' ? '-- : --' : '0'}
+          placeholder={typeInput === 'timer' ? '-- : -- : --' : '0'}
           placeholderTextColor={theme.colors.gray3}
           keyboardType="numeric"
           {...rest}
